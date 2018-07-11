@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inicio</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="javascript.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .barra2 {
+            background: #074F7B;
+        }
+
+        .login {
+            position: absolute;
+            top: 17vh;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #000;
+        }
+
+        .login2 {
+            position: absolute;
+            top: 18vh;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #000;
+            background: rgba(7, 79, 123,0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar" class="navbar navbar-expand-sm navbar-light barra2 fixed-top">
+            <a class="navbar-brand" href="#">
+                <img src="img/GoogleG.svg" height="30" width="30" alt="">
+            </a>
+            <button id="botonResponsive" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barra" aria-controls="barra"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="barra">
+                <div class="navbar-nav ml-auto text-center">
+                    <a class="nav-item nav-link text-white mr-2 active" href="#">Inicio
+                        <span class="sr-only">(current)</span>
+                    </a>
+                    <a class="nav-item nav-link text-white mr-2" href="#">Precios</a>
+                    <a class="nav-item nav-link text-white mr-2" href="#">Iniciar Sesion</a>
+                    <a class="nav-item nav-link text-white mr-2" href="#">Registrarse</a>
+                </div>
+            </div>
+        </nav>
+        <nav id="navbar2" class="navbar navbar-expand-sm navbar-light fixed-top barra2">
+            <a class="navbar-brand" href="#">
+                <img src="img/GoogleG.svg" height="30" width="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barra2" aria-controls="barra" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="barra2">
+                <div class="navbar-nav ml-auto text-center">
+                    <a class="nav-item nav-link text-white mr-2 active" href="#">Inicio
+                        <span class="sr-only">(current)</span>
+                    </a>
+                    <a class="nav-item nav-link text-white mr-2" href="#">Precios</a>
+                    <a class="nav-item nav-link text-white mr-2" href="#">Iniciar Sesion</a>
+                    <a class="nav-item nav-link text-white mr-2" href="#">Registrarse</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- <section class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-6 col-md-3">
+                <form class="login">
+                    <img class="" src="img/github-icon.svg" width="100" height="100" alt="">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block mb-2">Submit</button>
+                    <img src="img/Facebook.svg" class="text-center" width="250" height="70" alt="">
+                </form>
+            </div>
+        </div>
+    </section> -->
+    <section class="container-fluid">
+        <div class="row text-center align-items-center justify-content-center">
+            <form action="" class="login2 p-5">
+                <div class="col-12">
+                    <img src="img/git-scm-icon.svg" alt="">
+                </div>
+                <div class="col-12 text-center">
+                    <h1>Sign in to GitHub</h1>
+                </div>
+                <div class="col-12 mt-3">
+
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" placeholder="email" class="form-control form-control-lg">
+                        <div class="form-group mt-3">
+                            <input type="text" name="contrasena" id="contrasena" placeholder="Contraseña" class="form-control form-control-lg">
+                        </div>
+                        <div class="form-group text-left">
+                            <input type="checkbox" class="check"> Recordar Contraseña
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-block btn-primary">Login</button>
+                        </div>
+                    </div>
+            </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/fontAwesone.min.js"></script>
+</body>
+
+</html>
