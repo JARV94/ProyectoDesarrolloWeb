@@ -10,8 +10,7 @@
     <script src="js/javascript.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-        crossorigin="anonymous">
+    <script src="js/fontAwesone.min.js"></script>
     <style>
         #primeraSeccion {
             height: 600px;
@@ -26,7 +25,22 @@
         .barra2 {
             background: #074F7B;
         }
-
+         footer p a{
+            padding-left: 10px;
+            color: white;
+        }
+        footer p a:hover{
+            padding-left: 10px;
+            color: white;
+        }
+        footer{
+            padding: 15px 0 15px 0;
+            background:#074F7B;
+        } 
+        #footerRS a{
+            color: white;
+            font-size: 20px;
+        }
         /* .arriba{
             display: inline-block;
             padding: 20px;
@@ -143,7 +157,7 @@
         </div>
     </section>
     <div class="container-fluid mt-5 text-center">
-        <h1 class="mb-3">¿Por qué elegir Google Drive</h1>
+        <h1 class="mb-3">¿Por qué elegir Google Drive?</h1>
         <div class="row ">
             <div class="card-group col-12">
                 <div class="card">
@@ -168,14 +182,35 @@
                 <div class="card">
                     <img class="card-img-top" src="img/seguridad.svg" width="250" height="250" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This
-                            card has even longer content than the first to show that equal height action.</p>
+                        <h5 class="card-title">Tus archivos siempre seguros</h5>
+                        <p class="card-text">Tus archivos estan seguros, tu codigo es privado, disponible solo para ti y a las personas que tu decidas compartir</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <footer class="row justify-content-center align-items-center mt-5">
+        <div class="col-12 col-sm-6 my-3 my-md-0 order-2 order-sm-1">
+                <p class=" text-center my-3">
+                        <a href="#">Inicio</a>
+                        
+                        <a href="#">Precios</a>
+                        
+                        <a href="#">Iniciar Sesión</a>
+                        
+                        <a href="#">Registrarse</a>
+                    </p>
+    
+                    <p class="text-muted text-center">Company Name &copy; 2018</p>
+
+        </div>
+        <div id="footerRS" class="col-sm-6 col-12 text-center order-1 order-sm-2">
+                <a href="#" title="Facebook" class="px-3"><i class="fab fa-facebook"></i></a>
+				<a href="#" title="Twitter" class="px-3"><i class="fab fa-twitter"></i></a>
+				<a href="#" title="Google +" class="px-3"><i class="fab fa-google-plus"></i></a>
+				<a href="#" title="Blog" class="px-3"><i class="fab fa-blogger-b"></i></a>
+        </div>
+    </footer>
 </body>
 
 </html>
