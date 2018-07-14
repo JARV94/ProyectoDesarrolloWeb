@@ -16,8 +16,12 @@
 		body {
 			background: url("img/fondoRegistro.jpg")
 		}
-		.formulario{
+
+		.formulario {
 			background-color: rgba(255, 255, 255, 0.5)
+		}
+		h4{
+			font-weight: 300;
 		}
 	</style>
 </head>
@@ -45,8 +49,14 @@
 
 	<div class="container " style="padding-top: 10%;">
 		<div class="row justify-content-end">
+
+			<div class="col-md-6 mt-5 d-none d-md-block">
+				<h1 class="display-4 text-white text-center mb-3 d-none d-lg-block">Construido para desarrolladores</h1>
+				<h1 class="text-white text-center mb-3 d-none d-md-block d-lg-none">Construido para desarrolladores</h1>
+				<h4 class="text-white text-center">puedes alojar y revisar tu código, administrar proyectos y crear software junto a tus amigos </h4>
+			</div>
 			<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-				<form class="form-control formulario">
+				<form class="form-control formulario my-5 my-md-0">
 					<h2 class="text-center p-3 font-weight-bold ">REGISTRO</h2>
 					<div class="row form-group justify-content-center">
 						<div class="col-md-8">
@@ -80,7 +90,7 @@
 							<div class="input-group">
 								<div class=" input-group-prepend">
 									<span class=" input-group-text">
-											<i class="far fa-envelope"></i>
+										<i class="far fa-envelope"></i>
 									</span>
 								</div>
 								<input id="correo" name="correo" type="correo" placeholder="Email" class="form-control">
