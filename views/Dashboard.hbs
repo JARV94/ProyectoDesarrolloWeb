@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/fontAwesone.min.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            background: #f8f9fa;
+            font-size: 16px;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .barra-lateral {
+            /* background: #f8f9fa; */
+            background: #074F7B;
+            color: black;
+            min-width: 100px;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        -barra-lateral a {
+            color: white;
+        }
+
+        .barra-lateral .logo {
+            background: #074F7B;
+            ;
+            margin-bottom: 2px;
+        }
+
+        .barra-lateral .logo h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px 0;
+            text-align: center;
+            font-weight: 300;
+            margin: 0px;
+            color: white;
+        }
+
+        .barra-lateral .menu a {
+            display: block;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 200px;
+            border-bottom: 1px solid rgba(255, 155, 255, .1);
+            color: white;
+        }
+
+        .barra-lateral .menu a:hover {
+            text-decoration: none;
+            background: white;
+            color: black;
+        }
+
+        #barraSuperior {
+            margin-left: -13px;
+        }
+
+        @media screen and (max-width:1300px) {
+            .barra-lateral {
+                min-width: auto;
+            }
+            .barra-lateral .logo {
+                display: none;
+            }
+            .barra-lateral .menu a span {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:575px) {
+            .barra-lateral {
+                min-height: auto;
+            }
+        }
+
+        nav {
+            background: #074F7B;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class=" barra-lateral col-sm-auto">
+                <div class="logo text-center pt-3">
+                    <a href="index.html">
+                        <img src="assets/img/git-scm-icon.svg" height="40" width="40" alt="">
+                    </a>
+                </div>
+                <nav class="menu d-flex d-sm-block  justify-content-center flex-wrap barra-lateral">
+                    <a href="Dashboard.html" title="Mi Unidad" class="pr-1">
+                        <i class="fas fa-laptop"></i>
+                        <span>Mi Unidad</span>
+                    </a>
+                    <a href="#" class="" title="compartidos Conmigo">
+                        <i class="far fa-handshake"></i>
+                        <span>Compartidos Conmigo</span>
+                    </a>
+                    <a href="Destacados.html" title="Favoritos" class="">
+                        <i class="far fa-star"></i>
+                        <span>Favoritos</span>
+                    </a>
+                    <a href="#" title="Recientes" class="">
+                        <i class="far fa-edit"></i>
+                        <span>Recientes</span>
+                    </a>
+                    <a href="#" title="Editor" class="">
+                        <i class="far fa-sticky-note"></i>
+                        <span>Editor</span>
+                    </a>
+                    <button class="navbar-toggler d-block d-md-none" type="button" data-toggle="collapse" data-target="#navbarPrincipal" aria-controls="navbarPrincipal"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span>
+                            <i class="fas fa-bars text-white d-block d-md-none"></i>
+                        </span>
+                    </button>
+                </nav>
+            </div>
+            <main class="col">
+                <nav class="row navbar navbar-expand-md navbar-light">
+                    <div class="collapse navbar-collapse" id="navbarPrincipal">
+                        <div class="col-lg-8">
+                            <div class="input-group">
+                                <input type="search" class="form-control" id="Buscar" placeholder="Buscar">
+                                <div class="input-group-append">
+                                    <button class="btn btn-light" style="border: none;">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 text-right">
+                            <a href="index.html" class="btn btn-outline-primary">
+                                Salir
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="row mt-5">
+                    <div class=" col-12  col-md-6 col-lg-3 ">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12  col-md-6 col-lg-3 mt-2 mt-lg-0 ">
+                        <div class="card ">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mt-2 m-lg-0">
+                        <div class="card ">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12  col-md-6 col-lg-3 mt-2 m-lg-0 ">
+                        <div class="card ">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table mt-4">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Propietario</th>
+                                <th scope="col">Ultima Modificación</th>
+                                <th scope="col" class="d-none d-md-block">Tamaño del Archivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Archivo 1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td class="d-none d-md-block">@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Archivo 1</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td class="d-none d-md-block">@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Archivo 1</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td class="d-none d-md-block">@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>

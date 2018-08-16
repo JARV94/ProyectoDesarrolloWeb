@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inicio</title>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/fontAwesone.min.js"></script>
+    <style>    
+    </style>
+</head>
+
+<body class="fondoBody">
+    <header>
+        <nav id="navbar2" class="navbar navbar-expand-sm navbar-light fixed-top barra2">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/git-scm-icon.svg" height="30" width="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barra2" aria-controls="barra" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="barra2">
+                <div class="navbar-nav ml-auto text-center">
+                    <a class="nav-item nav-link text-white mr-2 active" href="index.html">Inicio
+                        <span class="sr-only">(current)</span>
+                    </a>
+                    <a class="nav-item nav-link text-white mr-2" href="precios.html">Precios</a>
+                    <a class="nav-item nav-link text-white mr-2" href="login.html">Iniciar Sesion</a>
+                    <a class="nav-item nav-link text-white mr-2" href="registro.html">Registrarse</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="container-fluid">
+        <div class="row text-center align-items-center justify-content-center">
+            <form method="POST" action="/login" class="login2 p-5">
+                <div class="col-12">
+                    <img src="assets/img/git-scm-icon.svg" alt="">
+                </div>
+                <div class="col-12 text-center">
+                    <h1 class="text-white">Ingresa JR Code</h1>
+                </div>
+                <div class="col-12 mt-3">
+
+                    <div class="form-group">
+                        <input type="email" name="correo" id="correo" placeholder="email" class="form-control form-control-lg">
+                        <div class="form-group mt-3">
+                            <input type="text" name="contrasena" id="contrasena" placeholder="Contraseña" class="form-control form-control-lg">
+                        </div>
+                        <div class="form-group text-left text-white">
+                            <input type="checkbox" class="check"> Recordar Contraseña
+                        </div>
+                        <div class="form-group">
+                                <button type="submit" class="btn btn-block btn-primary">Iniciar Sesión</button>
+                        </div>
+                    </div>
+            </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

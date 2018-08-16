@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<script src="assets/js/fontAwesone.min.js"></script>
+	<title>Precios</title>
+	<style>
+		.barra2 {
+			background: #074F7B;
+		}
+
+		.card-header {
+
+			background-color: #074F7B;
+		}
+
+		footer p a {
+			padding-left: 10px;
+			color: white;
+		}
+
+		footer p a:hover {
+			padding-left: 10px;
+			color: white;
+		}
+
+		footer {
+			padding: 15px 0 15px 0;
+			background: #074F7B;
+		}
+
+		#footerRS a {
+			color: white;
+			font-size: 20px;
+		}
+		a button:hover{
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav id="navbar2" class="navbar navbar-expand-sm navbar-light fixed-top barra2">
+			<a class="navbar-brand" href="index.html">
+				<img src="img/git-scm-icon.svg" height="30" width="30" alt="">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barra2" aria-controls="barra" aria-expanded="false"
+			    aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="barra2">
+				<div class="navbar-nav ml-auto text-center">
+					<a class="nav-item nav-link text-white mr-2 active" href="index.html">Inicio
+						<span class="sr-only">(current)</span>
+					</a>
+					<a class="nav-item nav-link text-white mr-2" href="precios.html">Precios</a>
+					<a class="nav-item nav-link text-white mr-2" href="login.html">Iniciar Sesion</a>
+					<a class="nav-item nav-link text-white mr-2" href="registro.html">Registrarse</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main class="container">
+		<div class="row my-5 d-flex justify-content-center">
+			<div class="col-8 text-center">
+				<h1 class="display-4 mt-3">Precios</h1>
+				<p class="lead">Bienvenido, puedes elegir entre nuestros precios disponibles, segun tus necesidades, ofrecemos muy buenos servicios en
+					cada uno de los planes. Cada plan cuenta con colaboración en tiempo real y chat entre miembros de un equipo de trabajo,
+					entre otras cosas.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="card-deck">
+					<!-- Card 1 -->
+					<div class="card mb-4" style="min-width: 250px;">
+						<div class="card-header">
+							<h4 class="my-0 text-center text-white">Gratis</h4>
+						</div>
+						<div class="card-body text-center">
+							<h1>$0
+								<span class="text-muted">/ mes</span>
+							</h1>
+							<ul class="list-unstyled">
+								<li>15 GB de espacio de espacio</li>
+								<li>Soporte por email</li>
+							</ul>
+							<a href="login.html">
+								<button class="btn btn-outline-primary  btn-block">Registrate Gratis</button>
+							</a>
+						</div>
+					</div>
+					<!-- Card 2 -->
+					<div class="card mb-4" style="min-width:250px;">
+						<div class="card-header">
+							<h4 class="my-0 text-center text-white">Profesional</h4>
+						</div>
+						<div class="card-body text-center">
+							<h1>$15
+								<span class="text-muted">/ mes</span>
+							</h1>
+							<ul class="my-3 list-unstyled">
+								<li>50 GB de espacio de espacio</li>
+								<li>Soporte por email las 24 horas</li>
+							</ul>
+						<a href="login.html"><button class="btn btn-outline-primary btn-block">Empezar Ahora</button></a>
+						</div>
+					</div>
+					<!-- Card 3 -->
+					<div class="card mb-4" style="min-width:250px;">
+						<div class="card-header">
+							<h4 class="my-0 text-center text-white">Empresas</h4>
+						</div>
+						<div class="card-body text-center">
+							<h1>25$
+								<span class="text-muted">/ mes</span>
+							</h1>
+							<ul class="my-3 list-unstyled">
+								<li>100GB de espacio</li>
+								<li>Soporte por email</li>
+							</ul>
+						<a href="login.html"><button class="btn btn-outline-primary btn-block">Empezar Ahora</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="row justify-content-center align-items-center mt-5">
+		<div class="col-12 col-sm-6 my-3 my-md-0 order-2 order-sm-1">
+			<p class=" text-center my-3">
+				<a href="index.html">Inicio</a>
+
+				<a href="precios.html">Precios</a>
+
+				<a href="login.html">Iniciar Sesión</a>
+
+				<a href="registro.html">Registrarse</a>
+			</p>
+
+			<p class="text-muted text-center">JR Code &copy; 2018</p>
+
+		</div>
+		<div id="footerRS" class="col-sm-6 col-12 text-center order-1 order-sm-2">
+			<a href="#" title="Facebook" class="px-3">
+				<i class="fab fa-facebook"></i>
+			</a>
+			<a href="#" title="Twitter" class="px-3">
+				<i class="fab fa-twitter"></i>
+			</a>
+			<a href="#" title="Google +" class="px-3">
+				<i class="fab fa-google-plus"></i>
+			</a>
+			<a href="#" title="Blog" class="px-3">
+				<i class="fab fa-blogger-b"></i>
+			</a>
+		</div>
+	</footer>
+
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src=""></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

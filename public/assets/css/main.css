@@ -1,0 +1,58 @@
+.barra2 {
+    background: #074F7B;
+}
+
+.login {
+    position: absolute;
+    top: 17vh;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.login2 {
+    position: absolute;
+    top: 18vh;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000;
+    background: rgba(7, 79, 123, 0.4);
+}
+#primeraSeccion {
+    height: 600px;
+    background: url("../img/imagen1.jpg");
+}
+
+#contenido {
+    height: 600px;
+    background-color: white;
+}
+
+footer p a {
+    padding-left: 10px;
+    color: white;
+}
+
+footer p a:hover {
+    padding-left: 10px;
+    color: white;
+}
+
+footer {
+    padding: 15px 0 15px 0;
+    background: #074F7B;
+}
+
+#footerRS a {
+    color: white;
+    font-size: 20px;
+}
+.formulario {
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+h4 {
+    font-weight: 300;
+}
+.fondoBody {
+    background: url("../img/fondoRegistro.jpg");
+}
