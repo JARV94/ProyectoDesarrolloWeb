@@ -26,39 +26,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.get("/",function(req,res){
-    res.render("index")
-});
-app.get("/login",function(req,res){
-    res.render("login");
-});
+//rutas
+app.use(require("./upload.js"));
+require("./rutas.js")(app,passport);
 
-app.post("/login",passport.authenticate("local-login",{
-    successRedirect:"/precios",
-    failureRedirect:"/login",
-    failureflash:true
-}))
-
-app.get("/registro",function(req,res){
-    res.render("registro");
-});
-app.get("/precios",isLoggedIn,function(req,res){
-    res.render("precios");
-});
-app.post("/registro",passport.authenticate("registroLocal",{
-    successRedirect:"/precios",
-    failureRedirect:"/registro",
-    failureflash:true
-}));
-
-function isLoggedIn (req, res, next) {
-	if (req.isAuthenticated()) {
-		return next();
-	}
-
-	res.redirect('/');
-}
 
 app.listen(3000,function(){
     console.log("Servidor iniciado");
-});
+}); 
