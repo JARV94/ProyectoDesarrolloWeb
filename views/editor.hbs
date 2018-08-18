@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="lib/codemirror.js"></script>
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="lib/codemirror.js"></script>
+    <link rel="stylesheet" href="theme/monokai.css">
+    <script src="mode/javascript/javascript.js"></script>
+    <script src="mode/css/css.js"></script>
+    <script src="mode/xml/xml.js"></script>
+    <script src="addon\edit/closetag.js"></script>
+    <script src="addon/hint/show-hint.js"></script>
+    <script src="addon/hint/javascript-hint.js"></script>
+    <link rel="stylesheet" href="addon/hint/show-hint.css">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="codeeditor">
+
+    </textarea>
+    <input type="button" id="boton" value="enviar">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("codeeditor"),
+            {
+                mode: "javascript",
+                theme: "monokai",
+                //tabSize:2,
+                indentUnit: 3,
+                lineNumbers: true,
+                lineWrapping: true,
+                extraKeys: { "Ctrl-Space": "autocomplete" },
+                autoCloseTags: true
+            });
+
+        var boton = document.getElementById("boton");
+
+        //var informacion=document.getElementById("codeeditor").
+        //var informacion2=informacion.value();
+        boton.addEventListener("click", function () {
+            /*/var informacion = editor.getValue()
+            console.log(m);
+            console.log(typeof (informacion));
+            console.log(informacion);*/
+            var informacion = editor.getValue();
+            editor.setValue("");
+            parametros = { informacion: informacion }
+            $.ajax({
+                url: "/editor",
+                dataType: "json",
+                data: parametros,
+                method: "POST",
+                success: function (respuesta){
+                    console.log("estoy aqui")
+                    console.log(respuesta);
+
+                    setTimeout(function(){ editor.setValue(respuesta.informacion); }, 3000);
+                    //editor.setValue(respuesta.informacion);
+                }
+            })
+        })
+
+        /*
+CodeMirror.modeURL = "mode/%N/%N.js";
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+  lineNumbers: true
+});
+var modeInput = document.getElementById("mode");
+CodeMirror.on(modeInput, "keypress", function(e) {
+  if (e.keyCode == 13) change();
+});
+function change() {
+  var val = modeInput.value, m, mode, spec;
+  if (m = /.+\.([^.]+)$/.exec(val)) {
+    var info = CodeMirror.findModeByExtension(m[1]);
+    if (info) {
+      mode = info.mode;
+      spec = info.mime;
+    }
+  } else if (/\//.test(val)) {
+    var info = CodeMirror.findModeByMIME(val);
+    if (info) {
+      mode = info.mode;
+      spec = val;
+    }
+  } else {
+    mode = spec = val;
+  }
+  if (mode) {
+    editor.setOption("mode", spec);
+    CodeMirror.autoLoadMode(editor, mode);
+    document.getElementById("modeinfo").textContent = spec;
+  } else {
+    alert("Could not find a mode corresponding to " + val);
+  }
+}*/
+    </script>
+</body>
+
+</html>
