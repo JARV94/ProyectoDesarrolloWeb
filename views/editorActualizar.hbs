@@ -19,6 +19,9 @@
     <script src="addon/hint/show-hint.js"></script>
     <script src="addon/hint/javascript-hint.js"></script>
     <link rel="stylesheet" href="addon/hint/show-hint.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="assets/js/controladorEditor.js"></script>
     <title>Document</title>
     <style>
         body {
@@ -28,14 +31,24 @@
 </head>
 
 <body>
-    <input type="text" class="form-control my-4 w-50 mx-auto" id="nombre">
+    <input type="text" class="form-control my-4 w-50 mx-auto" id="nombre">{{nombre}}
     <textarea id="codeeditor">
-        Hello World
+        {{data}}
     </textarea>
-    <input type="button" class="btn btn-primary w-25 my-4 mx-auto" id="boton" value="enviar">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-        <script src="assets/js/controladorEditor.js"></script>
+    <input type="button" class="btn btn-primary w-25 my-4 mx-auto" id="boton" value="enviar"> {{!--
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("codeeditor"),
+            {
+                mode: "javascript",
+                theme: "monokai",
+                //tabSize:2,
+                indentUnit: 3,
+                lineNumbers: true,
+                lineWrapping: true,
+                extraKeys: { "Ctrl-Space": "autocomplete" },
+                autoCloseTags: true
+            });
+    </script> --}}
 </body>
 
 </html>

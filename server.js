@@ -28,8 +28,9 @@ app.use(passport.session());
 app.use(flash());
 
 //rutas
-app.use(require("./upload.js"));
 require("./rutas.js")(app,passport);
+app.use(require("./upload.js"));
+
 
 
 app.listen(3000,function(){
