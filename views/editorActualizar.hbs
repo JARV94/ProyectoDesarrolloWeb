@@ -31,9 +31,8 @@
 </head>
 
 <body>
-    <input type="text" class="form-control my-4 w-50 mx-auto" id="nombre">{{nombre}}
+    <input type="text" class="form-control my-4 w-50 mx-auto" value={{nombre}} id="nombre">
     <textarea id="codeeditor">
-        {{data}}
     </textarea>
     <input type="button" class="btn btn-primary w-25 my-4 mx-auto" id="boton" value="enviar"> {{!--
     <script>
@@ -49,6 +48,8 @@
                 autoCloseTags: true
             });
     </script> --}}
+
+    {{!-- <script src="assets/js/controladorEditor.js"></script> --}}
 </body>
 
 </html>
