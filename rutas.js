@@ -25,7 +25,7 @@ module.exports = (app, passport) => {
         res.render("login");
     });
 
-    app.get("/obtenerArchivos",isLoggedIn, function (req, res) {
+    app.get("/obtenerArchivos", isLoggedIn, function (req, res) {
         let usuario = req.session.passport.user;
         conexion.query("SELECT codigo_archivo, codigo_propietario, nombre_archivo, icono, fecha_creacion, favorito FROM tbl_archivo WHERE codigo_propietario=? and estado=1 ", [usuario], function (error, resultado) {
             console.log(resultado);
@@ -37,7 +37,7 @@ module.exports = (app, passport) => {
         })
     })
 
-    app.get("/papelera",isLoggedIn, function (req, res) {
+    app.get("/papelera", isLoggedIn, function (req, res) {
         let usuario = req.session.passport.user;
         conexion.query("SELECT codigo_archivo, codigo_propietario, nombre_archivo, icono, fecha_creacion, favorito FROM tbl_archivo WHERE estado=0 and codigo_propietario=?", [usuario], function (error, resultado) {
             console.log(usuario);
@@ -50,7 +50,7 @@ module.exports = (app, passport) => {
         })
     });
 
-    app.get("/contactos,",isLoggedIn, function (req, res) {
+    app.get("/contactos", isLoggedIn, function (req, res) {
         usuario = req.session.passport.user;
         conexion.query("SELECT * FROM TBL_USUARIO", function (error, resultado) {
             if (error) {
@@ -66,7 +66,7 @@ module.exports = (app, passport) => {
         res.render("editor");
     });
 
-    app.get("/archivosCompartidos",isLoggedIn, function (req, res) {
+    app.get("/archivosCompartidos", isLoggedIn, function (req, res) {
         let usuario = req.session.passport.user
         conexion.query("SELECT A.codigo_archivo, nombre_archivo, icono, fecha_creacion, favorito, B.codigo_usuario_recibe FROM tbl_archivo A INNER JOIN tbl_archivo_compartido B ON(A.codigo_archivo=B.codigo_archivo) WHERE B.codigo_usuario_recibe=?", [usuario], function (error, resultado) {
             if (error) {
@@ -78,7 +78,7 @@ module.exports = (app, passport) => {
         })
     });
 
-    app.get("/actualizarArchivo",isLoggedIn, function (req, res) {
+    app.get("/actualizarArchivo", isLoggedIn, function (req, res) {
         // const {
         //     id
         // } = req.params;
@@ -105,7 +105,19 @@ module.exports = (app, passport) => {
         })
     });
 
-    app.post("/actualizarArchivo",isLoggedIn, function (req, res) {
+    app.get("/recientes", function (req, res) {
+        let usuario = req.session.passport.user;
+        conexion.query("SELECT codigo_archivo, codigo_propietario, nombre_archivo, icono, fecha_creacion, favorito FROM tbl_archivo WHERE codigo_propietario=? and estado=1 and DATE_SUB(CURDATE(),INTERVAL 3 DAY) <= fecha_Creacion", [usuario], function (error, resultado) {
+            if(error){
+                throw error
+            }else{
+                console.log(resultado);
+                res.send(resultado);
+            }
+        })
+    })
+
+    app.post("/actualizarArchivo", isLoggedIn, function (req, res) {
         req.session.idArchivo = req.body.id;
         conexion.query("SELECT Archivo from tbl_archivo where codigo_archivo=?", [req.body.id], function (error, resultado) {
             if (error) {
@@ -119,7 +131,7 @@ module.exports = (app, passport) => {
         })
     });
 
-    app.post("/actualizar",isLoggedIn, function (req, res) {
+    app.post("/actualizar", isLoggedIn, function (req, res) {
         console.log(req.body);
 
         let usuario = req.session.passport.user;
@@ -146,7 +158,7 @@ module.exports = (app, passport) => {
         });
     })
 
-    app.get("/verFavoritos",isLoggedIn, function (req, res) {
+    app.get("/verFavoritos", isLoggedIn, function (req, res) {
         let usuario = req.session.passport.user;
         conexion.query("SELECT codigo_archivo, codigo_propietario, nombre_archivo, icono, fecha_creacion, favorito FROM tbl_archivo WHERE codigo_propietario=? AND favorito=?", [usuario, true], function (error, resultado) {
             if (error) {
@@ -171,7 +183,7 @@ module.exports = (app, passport) => {
         res.redirect('/');
     });
 
-    app.post("/restaurar",isLoggedIn, function (req, res) {
+    app.post("/restaurar", isLoggedIn, function (req, res) {
         const {
             id
         } = req.body;
@@ -184,7 +196,7 @@ module.exports = (app, passport) => {
         })
     });
 
-    app.post("/buscar",isLoggedIn, function (req, res) {
+    app.post("/buscar", isLoggedIn, function (req, res) {
         const {
             buscar
         } = req.body;
@@ -198,7 +210,7 @@ module.exports = (app, passport) => {
         })
     });
 
-    app.post("/compartir",isLoggedIn, function (req, res) {
+    app.post("/compartir", isLoggedIn, function (req, res) {
         let codigoPropietario = req.session.passport.user;
         let {
             id,
@@ -245,7 +257,7 @@ module.exports = (app, passport) => {
         failureflash: true
     }));
 
-    app.post("/eliminarTotalmente",isLoggedIn, function (req, res) {
+    app.post("/eliminarTotalmente", isLoggedIn, function (req, res) {
         let {
             id
         } = req.body;
@@ -281,7 +293,7 @@ module.exports = (app, passport) => {
         })
     });
 
-    app.post("/eliminar",isLoggedIn, function (req, res) {
+    app.post("/eliminar", isLoggedIn, function (req, res) {
         let {
             id
         } = req.body;
@@ -294,7 +306,7 @@ module.exports = (app, passport) => {
         })
     });
 
-    app.post("/favorito",isLoggedIn, function (req, res) {
+    app.post("/favorito", isLoggedIn, function (req, res) {
         let {
             id,
             fav
