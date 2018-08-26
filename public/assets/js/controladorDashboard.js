@@ -29,7 +29,6 @@ function cargarArchivos() {
                             <button idActualizar=${respuesta.codigo_archivo} class="btn btn-info actualizar">Ver</button>
                             <button class="btn btn-danger borrarArchivo">Borrar</button>
                             <button data-toggle="modal" data-target="#exampleModal" IdVerArchivo=${respuesta.codigo_archivo} class="btn btn-success compartir">Compartir</button>
-                            <button idArchivo=${respuesta.codigo_archivo} class="btn btn-dark descargar ">Descargar</button>
                         </div>
                         <div class="card-footer text-muted">
                             ${new Date(respuesta.fecha_creacion).toDateString() }
@@ -249,7 +248,7 @@ $("#favoritos").click(function () {
                                 <i class="fas fa-star"></i>
                             </span>
                             <div class="mt-2">
-                                <h5 class="card-title">No hay Archivos ni carpetas destaacados</h5>
+                                <h5 class="card-title">No hay Archivos ni carpetas destacados</h5>
                                 <p class="card-text">Añade estrellas a los elementos que quieras encontrar facilmente</p>
                             </div>
                         </div>
@@ -273,7 +272,7 @@ $("#favoritos").click(function () {
                                 <button IdVerArchivo=${respuesta.codigo_archivo} class="btn btn-success compartir">Compartir</button>
                             </div>
                             <div class="card-footer text-muted">
-                            ${respuesta.fecha_creacion}
+                           ${new Date(respuesta.fecha_creacion).toDateString()}
                           </div>
                         </div>
                     </div>`
@@ -349,7 +348,7 @@ $("#irCompartidos").click(function () {
                         <button idActualizar=${respuesta.codigo_archivo} class="btn btn-info actualizar">Ver</button>
                     </div>
                     <div class="card-footer text-muted">
-                    ${respuesta.fecha_creacion}
+                    ${new Date(respuesta.fecha_creacion).toDateString()}
                   </div>
                 </div>
             </div>`

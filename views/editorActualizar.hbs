@@ -10,14 +10,18 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <script src="lib/codemirror.js"></script>
     <link rel="stylesheet" href="lib/codemirror.css">
+    <link rel="stylesheet" href="doc/docs.css">
     <script src="lib/codemirror.js"></script>
     <link rel="stylesheet" href="theme/monokai.css">
     <script src="mode/javascript/javascript.js"></script>
     <script src="mode/css/css.js"></script>
     <script src="mode/xml/xml.js"></script>
+    <script src="addon/mode/loadmode.js"></script>
+    <script src="addon/mode/meta.js"></script>
     <script src="addon\edit/closetag.js"></script>
     <script src="addon/hint/show-hint.js"></script>
     <script src="addon/hint/javascript-hint.js"></script>
+
     <link rel="stylesheet" href="addon/hint/show-hint.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
@@ -31,7 +35,7 @@
 </head>
 
 <body>
-    <input type="text" class="form-control my-4 w-50 mx-auto" value={{nombre}} id="nombreActualizar">
+    <input type="text" autocomplete="" class="form-control my-4 w-50 mx-auto" value={{nombre}} id="nombreActualizar">
     <textarea id="codeeditor">
         {{data}}
     </textarea>
@@ -39,3 +43,11 @@
 </body>
 
 </html>
+
+<script>
+
+</script>
+
+
+
+

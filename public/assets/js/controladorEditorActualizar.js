@@ -11,6 +11,7 @@ $(document).ready(function () {
         },
         autoCloseTags: true
     });
+    
     $("#botonActualizar").click(function () {
         let informacion = editor.getValue();
         let nombreArchivo = $("#nombreActualizar").val();
