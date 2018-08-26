@@ -8,6 +8,7 @@
     <title>Inicio</title>
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/controladorLogin.js"></script>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/js/fontAwesone.min.js"></script>
@@ -18,7 +19,7 @@
 <body class="fondoBody">
     <header>
         <nav id="navbar2" class="navbar navbar-expand-sm navbar-light fixed-top barra2">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
                 <img src="assets/img/git-scm-icon.svg" height="30" width="30" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barra2" aria-controls="barra" aria-expanded="false"
@@ -27,19 +28,19 @@
             </button>
             <div class="collapse navbar-collapse" id="barra2">
                 <div class="navbar-nav ml-auto text-center">
-                    <a class="nav-item nav-link text-white mr-2 active" href="index.html">Inicio
+                    <a class="nav-item nav-link text-white mr-2 active" href="/">Inicio
                         <span class="sr-only">(current)</span>
                     </a>
-                    <a class="nav-item nav-link text-white mr-2" href="precios.html">Precios</a>
-                    <a class="nav-item nav-link text-white mr-2" href="login.html">Iniciar Sesion</a>
-                    <a class="nav-item nav-link text-white mr-2" href="registro.html">Registrarse</a>
+                    <a class="nav-item nav-link text-white mr-2" href="/precios">Precios</a>
+                    <a class="nav-item nav-link text-white mr-2" href="/login">Iniciar Sesion</a>
+                    <a class="nav-item nav-link text-white mr-2" href="/registro">Registrarse</a>
                 </div>
             </div>
         </nav>
     </header>
     <section class="container-fluid">
         <div class="row text-center align-items-center justify-content-center">
-            <form method="POST" action="/login" class="login2 p-5">
+            <form method="POST" action="/login" class="login2 p-5 needs-validation " novalidate >
                 <div class="col-12">
                     <img src="assets/img/git-scm-icon.svg" alt="">
                 </div>
@@ -49,9 +50,9 @@
                 <div class="col-12 mt-3">
 
                     <div class="form-group">
-                        <input type="email" name="correo" id="correo" placeholder="email" class="form-control form-control-lg">
+                        <input type="email" name="correo" id="correo" placeholder="email" class="form-control form-control-lg" required>
                         <div class="form-group mt-3">
-                            <input type="text" name="contrasena" id="contrasena" placeholder="Contraseña" class="form-control form-control-lg">
+                            <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" class="form-control form-control-lg" required>
                         </div>
                         <div class="form-group text-left text-white">
                             <input type="checkbox" class="check"> Recordar Contraseña

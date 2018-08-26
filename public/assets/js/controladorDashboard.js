@@ -16,22 +16,24 @@ function cargarArchivos() {
                     clase = "notFav";
                 }
                 $("#archivos").append(
-                    `<div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
+                    `<div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12" idBorrar=${respuesta.codigo_archivo}>
                     <div class="card">
-                    <div class="card-header">
-                    ${respuesta.nombre_archivo}
-                    <span idArchivo=${respuesta.codigo_archivo} class="${clase}  darFavorito"><i class="far fa-star"></i></span>
-                  </div> 
-                        <img class="card-img-top S" src="${respuesta.icono}.svg"width="125" height="125"  alt="Card image cap">
+                        <div class="card-header">
+                            ${respuesta.nombre_archivo}
+                            <span idArchivo=${respuesta.codigo_archivo} class="${clase}  darFavorito">
+                                <i class="far fa-star"></i>
+                            </span>
+                        </div>
+                        <img class="card-img-top S" src="${respuesta.icono}.svg" width="125" height="125" alt="Card image cap">
                         <div class="card-body text-center">
-                            <a href=/actualizarArchivo/${respuesta.codigo_archivo} class="btn btn-info verArchivo">Ver</a>
-                            <button idBorrar=${respuesta.codigo_archivo} class="btn btn-danger borrarArchivo">Borrar</button>
+                            <button idActualizar=${respuesta.codigo_archivo} class="btn btn-info actualizar">Ver</button>
+                            <button class="btn btn-danger borrarArchivo">Borrar</button>
                             <button data-toggle="modal" data-target="#exampleModal" IdVerArchivo=${respuesta.codigo_archivo} class="btn btn-success compartir">Compartir</button>
                             <button idArchivo=${respuesta.codigo_archivo} class="btn btn-dark descargar ">Descargar</button>
                         </div>
                         <div class="card-footer text-muted">
-                        ${new Date(respuesta.fecha_creacion).toDateString() }
-                      </div>
+                            ${new Date(respuesta.fecha_creacion).toDateString() }
+                        </div>
                     </div>
                 </div>`
                 )
@@ -39,6 +41,28 @@ function cargarArchivos() {
         }
     })
 }
+
+$("#buscar").keypress(function (){
+
+})
+
+$(document).on("click",".actualizar",function(){
+    let elemento=$(this)[0];
+    let id=$(elemento).attr("idActualizar");
+    let parametros={id};
+    $.ajax({
+        url:"/actualizarArchivo",
+        data:parametros,
+        dataType:"json",
+        method:"POST",
+        success:function(respuesta){
+
+            if(respuesta.estatus===1){
+                window.location.href ="/actualizarArchivo";
+            }
+        }
+    })
+})
 
 $("#papelera").click(function(){
     $.ajax({
@@ -70,6 +94,21 @@ $("#papelera").click(function(){
     })   
 })
 
+$(document).on("click",".papelera",function(){
+    let elemento= $(this)[0];
+    let id= $(elemento).attr("idPapelera");
+    let parametros= {id}
+    $.ajax({
+        url:"/eliminarTotalmente",
+        data:parametros,
+        dataType:"json",
+        method:"POST",
+        success:function(respuesta){
+            console.log(respuesta);
+        }
+    })
+})
+
 $(document).on("click",".restaurar",function(){
     let elemento = $(this)[0];
     let id = $(elemento).attr("idRestaurar");
@@ -84,11 +123,14 @@ $(document).on("click",".restaurar",function(){
         success:function(respuesta){
         }
     })
+    $("#archivos").html("");
+    $("#papelera").click();
 })
 
 $(document).on("click", ".borrarArchivo", function () {
-    let elemento = $(this)[0];
+    let elemento = $(this)[0].parentElement.parentElement.parentElement;
     let id = $(elemento).attr("idBorrar");
+    console.log(id);
     let parametros = {
         id
     }
@@ -98,11 +140,10 @@ $(document).on("click", ".borrarArchivo", function () {
         data: parametros,
         dataType: "json",
         success: function (respuesta) {
-            console.log(respuesta);
-            $("#archivo").html("");
-            cargarArchivos();
         }
     })
+    $("#archivos").html("")
+    cargarArchivos();
 })
 
 $(document).on("click", ".darFavorito", function () {
